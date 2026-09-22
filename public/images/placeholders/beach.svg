@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1600" role="img" aria-labelledby="title desc">
+  <title id="title">海邊測試照片</title><desc id="desc">等待替換的九比十六直式測試圖片</desc>
+  <rect width="900" height="1600" fill="#ffe2eb"/><circle cx="670" cy="310" r="105" fill="#fff1cc"/><path d="M0 650c175-100 305 105 470 5s270 55 430-5v950H0Z" fill="#9ed8e4"/><path d="M0 825c200-85 325 105 505 15s265 35 395-12v772H0Z" fill="#76c1d4"/><path d="M0 1110c215-58 355 58 535 8s250 18 365-10v492H0Z" fill="#f6d6a8"/><path d="M230 540c75-55 145-55 220 0M510 520c65-48 125-48 190 0" fill="none" stroke="#fff" stroke-width="18" stroke-linecap="round"/><text x="450" y="1410" text-anchor="middle" font-size="54" font-family="sans-serif" font-weight="700" fill="#4f3540">海邊照片</text><text x="450" y="1480" text-anchor="middle" font-size="34" font-family="sans-serif" fill="#7c5d68">9:16・請替換</text>
+</svg>

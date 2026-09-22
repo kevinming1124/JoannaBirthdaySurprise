@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "ChenYuluoyan";
+  src: url("../assets/fonts/ChenYuluoyan-2.0-Thin.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --color-background: #fff6f9;
+  --color-surface: #ffffff;
+  --color-soft: #ffe2eb;
+  --color-border: #f8bed0;
+  --color-primary: #c54870;
+  --color-primary-hover: #ad365f;
+  --color-highlight: #f58faf;
+  --color-accent: #fff1cc;
+  --color-text: #4f3540;
+  --color-muted: #7c5d68;
+  --shadow-card: 0 22px 60px rgb(121 53 79 / 14%);
+  --shadow-button: 0 10px 26px rgb(197 72 112 / 24%);
+  --radius-large: 30px;
+  --radius-medium: 20px;
+  --transition-screen: 260ms ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--color-background);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin: 0;
+  color: var(--color-text);
+  background:
+    radial-gradient(circle at 12% 8%, rgb(255 226 235 / 80%), transparent 28rem),
+    radial-gradient(circle at 90% 82%, rgb(255 241 204 / 70%), transparent 26rem),
+    var(--color-background);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid rgb(197 72 112 / 34%);
+  outline-offset: 4px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+p,
+figure {
+  margin-top: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

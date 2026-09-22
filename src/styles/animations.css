@@ -1,0 +1,66 @@
+@keyframes heart-arrive {
+  0% { opacity: 0.4; transform: scale(0.65); }
+  65% { transform: scale(1.38); }
+  100% { opacity: 1; transform: scale(1.22); }
+}
+
+@keyframes photo-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reaction-float {
+  0% { opacity: 0; transform: translate(-50%, 16px) scale(0.7) rotate(-8deg); }
+  20% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -140px) scale(1.15) rotate(8deg); }
+}
+
+@keyframes glow-card {
+  0%, 100% { box-shadow: var(--shadow-card); }
+  50% { box-shadow: 0 20px 74px rgb(245 143 175 / 38%), 0 0 0 7px rgb(255 226 235 / 65%); }
+}
+
+.reaction-layer {
+  position: absolute;
+  z-index: 10;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.reaction-layer span {
+  position: absolute;
+  bottom: 5%;
+  left: var(--reaction-position);
+  font-size: 1.55rem;
+  animation: reaction-float 1500ms ease-out both;
+  animation-delay: calc(var(--reaction-index) * 110ms);
+}
+
+.reaction-layer--heartbeat span {
+  font-size: 1.8rem;
+}
+
+.reaction-glow {
+  animation: glow-card 1500ms ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress__heart.is-current,
+  .memory-photo,
+  .reaction-layer span,
+  .reaction-glow {
+    animation: none;
+  }
+
+  .envelope-scene .envelope {
+    opacity: 0;
+  }
+
+  .envelope-scene .birthday-letter,
+  .envelope-scene.is-open .birthday-letter,
+  .envelope-scene.is-revealed .birthday-letter {
+    opacity: 1;
+    transform: translate(-50%, -112px) scale(1);
+  }
+}

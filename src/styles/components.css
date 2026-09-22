@@ -1,0 +1,621 @@
+.button {
+  min-height: 50px;
+  padding: 13px 24px;
+  border: 0;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.button--primary {
+  color: #fff;
+  background: var(--color-primary);
+  box-shadow: var(--shadow-button);
+}
+
+.button--primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.button--secondary {
+  color: var(--color-primary);
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  box-shadow: 0 10px 30px rgb(121 53 79 / 10%);
+}
+
+.button--large {
+  min-height: 56px;
+  padding-inline: 28px;
+  font-size: 1.02rem;
+}
+
+.confetti {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.welcome-card {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 520px);
+  padding: clamp(34px, 8vw, 58px) clamp(24px, 7vw, 54px);
+  border: 1px solid rgb(248 190 208 / 74%);
+  border-radius: var(--radius-large);
+  text-align: center;
+  background: rgb(255 255 255 / 90%);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(10px);
+}
+
+.welcome-card::before,
+.welcome-card::after {
+  position: absolute;
+  color: var(--color-border);
+  font-size: 1.4rem;
+  content: "♥";
+}
+
+.welcome-card::before {
+  top: 22px;
+  left: 24px;
+  transform: rotate(-14deg);
+}
+
+.welcome-card::after {
+  right: 24px;
+  bottom: 22px;
+  transform: rotate(14deg);
+}
+
+.welcome-card__eyebrow,
+.quiz-card__eyebrow,
+.ending-heading span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--color-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.welcome-card__cake {
+  margin-bottom: 10px;
+  font-size: clamp(3rem, 12vw, 4.8rem);
+  filter: drop-shadow(0 10px 18px rgb(197 72 112 / 16%));
+}
+
+.welcome-card h1 {
+  margin-bottom: 14px;
+  font-size: clamp(2rem, 9vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+}
+
+.welcome-card h1 span {
+  display: block;
+  white-space: nowrap;
+}
+
+.welcome-card p {
+  margin-bottom: 28px;
+  color: var(--color-muted);
+  font-size: clamp(1rem, 4vw, 1.12rem);
+  line-height: 1.8;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 12px 12px;
+}
+
+.progress__hearts {
+  display: flex;
+  gap: 7px;
+}
+
+.progress__heart {
+  color: var(--color-soft);
+  font-size: 1.05rem;
+  line-height: 1;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.progress__heart.is-complete,
+.progress__heart.is-current {
+  color: var(--color-highlight);
+}
+
+.progress__heart.is-current {
+  transform: scale(1.22);
+  animation: heart-arrive 480ms ease both;
+}
+
+.progress__label {
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.quiz-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(26px, 7vw, 48px);
+  border: 1px solid rgb(248 190 208 / 72%);
+  border-radius: var(--radius-large);
+  background: rgb(255 255 255 / 94%);
+  box-shadow: var(--shadow-card);
+}
+
+.quiz-card h1 {
+  margin-bottom: 28px;
+  font-size: clamp(1.55rem, 6vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.options {
+  display: grid;
+  gap: 12px;
+}
+
+.option-button {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  min-height: 58px;
+  padding: 12px 16px;
+  border: 2px solid transparent;
+  border-radius: 17px;
+  color: var(--color-text);
+  font-weight: 700;
+  text-align: left;
+  background: var(--color-background);
+  cursor: pointer;
+  transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.option-button:not(:disabled):hover {
+  border-color: var(--color-border);
+  background: #fff0f5;
+  transform: translateX(3px);
+}
+
+.option-button:disabled {
+  cursor: default;
+  opacity: 0.58;
+}
+
+.option-button.is-selected {
+  border-color: var(--color-highlight);
+  background: var(--color-soft);
+  opacity: 1;
+}
+
+.option-button__letter {
+  display: grid;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--color-primary);
+  background: #fff;
+  box-shadow: 0 4px 10px rgb(121 53 79 / 9%);
+}
+
+.result {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 700ms ease, opacity 400ms ease;
+}
+
+.result.is-visible {
+  max-height: 2400px;
+  padding-top: 26px;
+  opacity: 1;
+}
+
+.result__feedback {
+  margin-bottom: 14px;
+  color: var(--color-primary);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.result__common {
+  margin: 6px 0 20px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  color: var(--color-text);
+  font-weight: 700;
+  line-height: 1.7;
+  background: var(--color-accent);
+}
+
+.result__next {
+  justify-self: center;
+  margin-top: 8px;
+}
+
+.memory-photo {
+  width: min(100%, 360px);
+  overflow: hidden;
+  margin: 4px auto 18px;
+  border: 8px solid #fff;
+  border-radius: var(--radius-medium);
+  background: var(--color-soft);
+  box-shadow: 0 12px 32px rgb(121 53 79 / 14%);
+  animation: photo-enter 500ms ease both;
+}
+
+.memory-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+}
+
+.carousel {
+  width: min(100%, 360px);
+  margin: 8px auto 20px;
+}
+
+.carousel__viewport {
+  display: flex;
+  overflow-x: auto;
+  border-radius: var(--radius-medium);
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  box-shadow: 0 12px 32px rgb(121 53 79 / 14%);
+}
+
+.carousel__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel__slide {
+  flex: 0 0 100%;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+.carousel__slide img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+}
+
+.carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 12px;
+}
+
+.carousel__button {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  padding: 0 0 3px;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-primary);
+  font-size: 1.7rem;
+  line-height: 1;
+  background: #fff;
+  cursor: pointer;
+}
+
+.carousel__status {
+  min-width: 48px;
+  color: var(--color-muted);
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.ending-heading {
+  position: relative;
+  z-index: 5;
+  margin: 4px 0 10px;
+  transition: opacity 300ms ease;
+}
+
+.screen--ending.letter-is-revealed .ending-heading {
+  opacity: 0;
+}
+
+.ending-heading h1 {
+  margin-bottom: 0;
+  font-family: "ChenYuluoyan", "DFKai-SB", "BiauKai", cursive;
+  font-size: clamp(2.1rem, 8vw, 3.25rem);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.envelope-scene {
+  position: relative;
+  width: min(100%, 660px);
+  height: clamp(590px, 76vh, 720px);
+  min-height: 590px;
+  margin-top: 4px;
+}
+
+.envelope {
+  position: absolute;
+  z-index: 3;
+  bottom: 84px;
+  left: 50%;
+  width: min(76vw, 360px);
+  aspect-ratio: 1.48;
+  transform: translateX(-50%);
+  transition: opacity 500ms ease 700ms, transform 500ms ease 700ms;
+  perspective: 900px;
+}
+
+.envelope__back,
+.envelope__front,
+.envelope__flap {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+}
+
+.envelope__back {
+  background: #f5a6bd;
+  box-shadow: 0 20px 45px rgb(121 53 79 / 20%);
+}
+
+.envelope__front {
+  z-index: 4;
+  overflow: hidden;
+  background:
+    linear-gradient(32deg, #f9b8cb 49.5%, transparent 50%) left / 50.5% 100% no-repeat,
+    linear-gradient(-32deg, #f7afc4 49.5%, transparent 50%) right / 50.5% 100% no-repeat,
+    linear-gradient(to top, #f8b4c8 0 48%, transparent 48%);
+}
+
+.envelope__flap {
+  z-index: 5;
+  height: 62%;
+  border-radius: 10px 10px 0 0;
+  background: #f493af;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top;
+  transition: transform 700ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.envelope__seal {
+  position: absolute;
+  z-index: 6;
+  top: 48%;
+  left: 50%;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.25rem;
+  background: var(--color-primary);
+  box-shadow: 0 6px 16px rgb(121 53 79 / 20%);
+  transform: translate(-50%, -50%);
+  transition: opacity 220ms ease 180ms;
+}
+
+.birthday-letter {
+  position: absolute;
+  z-index: 2;
+  bottom: 104px;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  width: min(90vw, 520px);
+  height: auto;
+  max-height: min(68vh, 570px);
+  min-height: 470px;
+  overflow: hidden;
+  padding: clamp(24px, 6vw, 42px);
+  border: 1px solid #f4dec9;
+  border-radius: 10px;
+  font-family: "ChenYuluoyan", "DFKai-SB", "BiauKai", cursive;
+  font-size: 1.22rem;
+  letter-spacing: 0.035em;
+  text-align: left;
+  background:
+    linear-gradient(rgb(255 253 247 / 94%), rgb(255 253 247 / 94%)),
+    repeating-linear-gradient(0deg, transparent 0 31px, #f4dfdf 31px 32px);
+  box-shadow: 0 18px 50px rgb(91 51 63 / 18%);
+  opacity: 0;
+  transform: translate(-50%, 130px) scale(0.58);
+  transform-origin: bottom;
+  transition:
+    transform 850ms cubic-bezier(0.2, 0.78, 0.23, 1),
+    opacity 220ms ease,
+    max-height 850ms ease;
+}
+
+.birthday-letter__ornament {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  color: var(--color-border);
+  font-size: 1.35rem;
+}
+
+.birthday-letter h2 {
+  margin-bottom: 20px;
+  color: var(--color-primary);
+  font-size: clamp(1.9rem, 7vw, 2.55rem);
+  font-weight: 400;
+}
+
+.birthday-letter__body {
+  flex: 0 0 auto;
+  min-height: 80px;
+  overflow: visible;
+  color: var(--color-text);
+  line-height: 1.9;
+}
+
+.birthday-letter__signature {
+  margin: 12px 0 14px;
+  color: var(--color-primary);
+  font-size: 1.45rem;
+  font-weight: 400;
+  text-align: right;
+}
+
+.date-note {
+  align-self: flex-start;
+  max-width: 92%;
+  padding: 12px 14px;
+  border-left: 4px solid var(--color-highlight);
+  border-radius: 0 12px 12px 0;
+  background: var(--color-soft);
+}
+
+.date-note span {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  font-weight: 400;
+}
+
+.date-note strong {
+  display: block;
+  color: var(--color-primary);
+  font-size: 1.08rem;
+  font-weight: 400;
+}
+
+.date-note p {
+  margin: 5px 0 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.envelope-scene.is-open .envelope__flap {
+  transform: rotateX(180deg);
+}
+
+.envelope-scene.is-open .envelope__seal {
+  opacity: 0;
+}
+
+.envelope-scene.is-open .birthday-letter {
+  opacity: 1;
+  transform: translate(-50%, -112px) scale(0.72);
+}
+
+.envelope-scene.is-revealed .envelope {
+  opacity: 0;
+  transform: translateX(-50%) translateY(45px) scale(0.9);
+}
+
+.envelope-scene.is-revealed .birthday-letter {
+  z-index: 7;
+  opacity: 1;
+  transform: translate(-50%, -112px) scale(1);
+}
+
+.envelope-scene.is-settled {
+  height: auto;
+  min-height: 0;
+}
+
+.envelope-scene.is-settled .birthday-letter {
+  position: relative;
+  inset: auto;
+  width: min(90vw, 520px);
+  height: auto;
+  max-height: 5000px;
+  min-height: 470px;
+  margin: -72px auto 0;
+  overflow: visible;
+  opacity: 1;
+  transform: none;
+}
+
+.replay-button {
+  position: relative;
+  z-index: 8;
+  margin: 24px 0 12px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+
+.replay-button.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .quiz-card {
+    border-radius: 24px;
+  }
+
+  .progress {
+    margin-inline: 6px;
+  }
+
+  .envelope-scene {
+    height: 650px;
+  }
+
+  .birthday-letter {
+    bottom: 92px;
+    height: auto;
+    max-height: 530px;
+    min-height: 530px;
+  }
+
+  .envelope-scene.is-open .birthday-letter {
+    transform: translate(-50%, -105px) scale(0.72);
+  }
+
+  .envelope-scene.is-revealed .birthday-letter {
+    transform: translate(-50%, -105px) scale(1);
+  }
+
+  .envelope-scene.is-settled .birthday-letter {
+    position: relative;
+    inset: auto;
+    height: auto;
+    max-height: 5000px;
+    min-height: 530px;
+    margin: -72px auto 0;
+    transform: none;
+  }
+}

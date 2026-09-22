@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1600" role="img" aria-labelledby="title desc">
+  <title id="title">逛街測試照片</title><desc id="desc">等待替換的九比十六直式測試圖片</desc>
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff6f9"/><stop offset="1" stop-color="#f8bed0"/></linearGradient></defs>
+  <rect width="900" height="1600" fill="url(#g)"/><circle cx="450" cy="680" r="330" fill="#fff" opacity=".6"/><path d="M155 610h275l-34 430H122Z" fill="#f58faf"/><path d="M470 540h290l40 500H430Z" fill="#c54870"/><g fill="none" stroke="#4f3540" stroke-width="24" stroke-linecap="round"><path d="M190 630c0-140 205-140 205 0M510 565c0-155 215-155 215 0"/></g><path d="M450 300c43-82 162-28 135 55-20 58-135 118-135 118s-115-60-135-118c-27-83 92-137 135-55Z" fill="#fff1cc"/><text x="450" y="1410" text-anchor="middle" font-size="54" font-family="sans-serif" font-weight="700" fill="#4f3540">逛街照片</text><text x="450" y="1480" text-anchor="middle" font-size="34" font-family="sans-serif" fill="#7c5d68">9:16・請替換</text>
+</svg>
